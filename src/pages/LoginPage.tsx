@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Navigate } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
-import DataInputForm from '../components/Admin/DataInputForm';
-import SurveyAnalytics from '../components/Admin/SurveyAnalytics';
-import DataConsole from '../components/Admin/DataConsole';
+import LoginForm from '../components/Admin/LoginForm';
 import { useAuth } from '../context/AuthContext';
 
-const AdminDashboard: React.FC = () => {
+const LoginPage: React.FC = () => {
   const { user, loading } = useAuth();
   
   // If still loading auth state, show loading indicator
@@ -26,31 +24,18 @@ const AdminDashboard: React.FC = () => {
     );
   }
   
-  // If not authenticated, redirect to login
-  if (!user) {
-    return <Navigate to="/login" replace />;
+  // If already authenticated, redirect to admin dashboard
+  if (user) {
+    return <Navigate to="/admin" replace />;
   }
 
   return (
     <Layout>
-      <div className="bg-gray-100 py-8 pt-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h1 className="text-3xl font-bold text-gray-800">Admin Dashboard</h1>
-            <p className="text-gray-600 mt-2">
-              Manage waste data, view survey analytics, and control dashboard content.
-            </p>
-          </div>
-          
-          <div className="space-y-8">
-            <DataInputForm />
-            <SurveyAnalytics />
-            <DataConsole />
-          </div>
-        </div>
+      <div className="flex items-center justify-center min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+        <LoginForm />
       </div>
     </Layout>
   );
 };
 
-export default AdminDashboard;
+export default LoginPage;

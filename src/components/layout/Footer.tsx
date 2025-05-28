@@ -1,69 +1,74 @@
 import React from 'react';
-import { Github, Twitter, Facebook, Instagram } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Recycle, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h2 className="mb-4 text-lg font-semibold">About Us</h2>
-            <p className="text-gray-400">
-              We're dedicated to creating sustainable environmental solutions through
-              data-driven insights and community engagement.
+            <div className="flex items-center">
+              <Recycle className="h-8 w-8 text-primary-400" />
+              <span className="ml-2 text-xl font-bold">EcoTrack</span>
+            </div>
+            <p className="mt-4 text-gray-300">
+              Empowering communities to track and reduce waste through 
+              data-driven insights and collaborative efforts.
             </p>
-          </div>
-          <div>
-            <h2 className="mb-4 text-lg font-semibold">Quick Links</h2>
-            <ul className="space-y-2 text-gray-400">
-              <li>
-                <Link to="/" className="hover:text-white">Home</Link>
-              </li>
-              <li>
-                <Link to="/about" className="hover:text-white">About</Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-white">Contact</Link>
-              </li>
-              <li>
-                <Link to="/login" className="hover:text-white">Admin Login</Link>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="mb-4 text-lg font-semibold">Contact Info</h2>
-            <ul className="space-y-2 text-gray-400">
-              <li>123 Environmental Way</li>
-              <li>Green City, Earth 12345</li>
-              <li>info@dataviz.org</li>
-              <li>(555) 123-4567</li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="mb-4 text-lg font-semibold">Follow Us</h2>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Twitter className="h-5 w-5" />
-                <span className="sr-only">Twitter</span>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Facebook className="h-5 w-5" />
-                <span className="sr-only">Facebook</span>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Instagram className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
+            <div className="mt-6">
+              <a 
+                href="https://maps.app.goo.gl/YBN9QGqs4iRtGP4t8?g_st=aw" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-primary-400 hover:text-primary-300 transition duration-300"
+              >
+                <MapPin className="h-5 w-5 mr-2" />
+                <span>Find Collection Points</span>
               </a>
             </div>
           </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <ul className="space-y-3">
+              <li className="flex items-center">
+                <Mail className="h-5 w-5 mr-2 text-primary-400" />
+                <span>info@ecotrack.example.com</span>
+              </li>
+              <li className="flex items-center">
+                <Phone className="h-5 w-5 mr-2 text-primary-400" />
+                <span>+1 (555) 123-4567</span>
+              </li>
+              <li className="flex items-center">
+                <MapPin className="h-5 w-5 mr-2 text-primary-400" />
+                <span>123 Green Street, Eco City</span>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Operating Hours</h3>
+            <table className="w-full text-left">
+              <tbody>
+                <tr>
+                  <td className="py-1 pr-4 text-gray-300">Monday - Friday</td>
+                  <td className="py-1">8:00 AM - 6:00 PM</td>
+                </tr>
+                <tr>
+                  <td className="py-1 pr-4 text-gray-300">Saturday</td>
+                  <td className="py-1">9:00 AM - 5:00 PM</td>
+                </tr>
+                <tr>
+                  <td className="py-1 pr-4 text-gray-300">Sunday</td>
+                  <td className="py-1">10:00 AM - 2:00 PM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div className="mt-8 border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; 2025 DataViz Project. All rights reserved.</p>
+        
+        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+          <p>&copy; {new Date().getFullYear()} EcoTrack. All rights reserved.</p>
         </div>
       </div>
     </footer>
