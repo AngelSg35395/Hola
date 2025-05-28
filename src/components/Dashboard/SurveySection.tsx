@@ -39,19 +39,19 @@ const SurveySection: React.FC = () => {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <ClipboardList className="h-12 w-12 text-primary-500 mx-auto mb-4" />
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Community Feedback</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Feedback de la Comunidad</h2>
             <p className="text-gray-600">
-              Your feedback helps us improve our waste management initiatives. 
-              Please take a moment to complete this short survey.
+              Tu feedback nos ayuda a mejorar nuestras iniciativas de gestión de residuos. 
+              Por favor, toma un momento para completar este breve cuestionario.
             </p>
           </div>
           
           {isSubmitSuccessful ? (
             <div className="bg-success-500 bg-opacity-10 p-6 rounded-lg border border-success-500 text-center animate-fade-in">
               <CheckCircle className="h-12 w-12 text-success-500 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold text-success-500 mb-2">Thank You!</h3>
+              <h3 className="text-xl font-semibold text-success-500 mb-2">¡Gracias!</h3>
               <p className="text-gray-700">
-                Your feedback has been submitted successfully. We appreciate your participation!
+                Tu feedback ha sido enviado exitosamente. ¡Gracias por tu participación!
               </p>
             </div>
           ) : (
@@ -61,7 +61,7 @@ const SurveySection: React.FC = () => {
             >
               <div className="mb-6">
                 <label className="block text-gray-700 font-medium mb-2" htmlFor="name">
-                  Name
+                  Nombre
                 </label>
                 <input
                   id="name"
@@ -69,7 +69,7 @@ const SurveySection: React.FC = () => {
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
                     errors.name ? 'border-error-500' : 'border-gray-300'
                   }`}
-                  {...register('name', { required: 'Name is required' })}
+                  {...register('name', { required: 'Nombre es requerido' })}
                 />
                 {errors.name && (
                   <p className="mt-1 text-error-500 text-sm flex items-center">
@@ -90,10 +90,10 @@ const SurveySection: React.FC = () => {
                     errors.email ? 'border-error-500' : 'border-gray-300'
                   }`}
                   {...register('email', { 
-                    required: 'Email is required',
+                    required: 'Correo electrónico es requerido',
                     pattern: {
                       value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                      message: 'Invalid email address'
+                      message: 'Dirección de correo electrónico inválida'
                     }
                   })}
                 />
@@ -107,21 +107,21 @@ const SurveySection: React.FC = () => {
               
               <div className="mb-6">
                 <label className="block text-gray-700 font-medium mb-2" htmlFor="participationLevel">
-                  How often do you participate in recycling?
+                  ¿Qué tan frecuentemente participas en la reciclaje?
                 </label>
                 <select
                   id="participationLevel"
                   className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 ${
                     errors.participationLevel ? 'border-error-500' : 'border-gray-300'
                   }`}
-                  {...register('participationLevel', { required: 'Please select an option' })}
+                  {...register('participationLevel', { required: 'Por favor, selecciona una opción' })}
                 >
-                  <option value="">Select an option</option>
-                  <option value="daily">Daily</option>
-                  <option value="weekly">Weekly</option>
-                  <option value="monthly">Monthly</option>
-                  <option value="rarely">Rarely</option>
-                  <option value="never">Never</option>
+                  <option value="">Selecciona una opción</option>
+                  <option value="daily">Diario</option>
+                  <option value="weekly">Semanal</option>
+                  <option value="monthly">Mensual</option>
+                  <option value="rarely">Raramente</option>
+                  <option value="never">Nunca</option>
                 </select>
                 {errors.participationLevel && (
                   <p className="mt-1 text-error-500 text-sm flex items-center">
@@ -133,7 +133,7 @@ const SurveySection: React.FC = () => {
               
               <div className="mb-6">
                 <label className="block text-gray-700 font-medium mb-2">
-                  How satisfied are you with the current waste management system?
+                  ¿Qué tan satisfecho estás con el sistema actual de gestión de residuos?
                 </label>
                 <div className="flex space-x-4 mt-2">
                   {[1, 2, 3, 4, 5].map((value) => (
@@ -141,7 +141,7 @@ const SurveySection: React.FC = () => {
                       <input
                         type="radio"
                         value={value}
-                        {...register('satisfactionLevel', { required: 'Please select a rating' })}
+                        {...register('satisfactionLevel', { required: 'Por favor, selecciona una calificación' })}
                         className="sr-only"
                       />
                       <span 
@@ -154,7 +154,7 @@ const SurveySection: React.FC = () => {
                         {value}
                       </span>
                       <span className="text-xs text-gray-600 mt-1">
-                        {value === 1 ? 'Poor' : value === 5 ? 'Excellent' : ''}
+                        {value === 1 ? 'Muy malo' : value === 5 ? 'Excelente' : ''}
                       </span>
                     </label>
                   ))}
@@ -169,7 +169,7 @@ const SurveySection: React.FC = () => {
               
               <div className="mb-6">
                 <label className="block text-gray-700 font-medium mb-2" htmlFor="suggestions">
-                  Do you have any suggestions for improvement?
+                  ¿Tienes alguna sugerencia para mejorar?
                 </label>
                 <textarea
                   id="suggestions"
@@ -187,7 +187,7 @@ const SurveySection: React.FC = () => {
                     {...register('isSubscribed')}
                   />
                   <span className="ml-2 text-gray-700">
-                    I would like to receive updates about waste management initiatives
+                    Me gustaría recibir actualizaciones sobre las iniciativas de gestión de residuos
                   </span>
                 </label>
               </div>
@@ -196,7 +196,7 @@ const SurveySection: React.FC = () => {
                 type="submit"
                 className="w-full bg-primary-500 text-white py-3 px-4 rounded-lg hover:bg-primary-600 transition-colors duration-300 font-medium"
               >
-                Submit Feedback
+                Enviar Feedback
               </button>
             </form>
           )}

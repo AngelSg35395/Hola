@@ -43,10 +43,10 @@ const PDFSection: React.FC = () => {
           <div className="md:grid md:grid-cols-5">
             <div className="bg-primary-600 text-white p-10 flex flex-col justify-center items-center md:col-span-2">
               <FileText className="h-16 w-16 mb-4" />
-              <h2 className="text-2xl font-bold mb-2">Waste Management Guide</h2>
+              <h2 className="text-2xl font-bold mb-2">Guía de Gestión de Residuos</h2>
               <p className="text-center text-primary-100 mb-6">
-                Download our comprehensive guide to learn about waste reduction, 
-                recycling best practices, and how to get involved in our community initiatives.
+                Descarga nuestro guía completo para aprender sobre reducción de residuos, 
+                mejores prácticas de reciclaje y cómo participar en nuestras iniciativas de la comunidad.
               </p>
               <div className="flex space-x-4">
                 <button
@@ -54,65 +54,65 @@ const PDFSection: React.FC = () => {
                   className="bg-white text-primary-600 px-4 py-2 rounded-lg flex items-center hover:bg-primary-50 transition-colors duration-300"
                 >
                   <Download className="h-4 w-4 mr-2" />
-                  Download
+                  Descargar
                 </button>
                 <button
                   onClick={handleView}
                   className="bg-primary-700 text-white px-4 py-2 rounded-lg flex items-center hover:bg-primary-800 transition-colors duration-300"
                 >
                   <Eye className="h-4 w-4 mr-2" />
-                  View PDF
+                  Ver PDF
                 </button>
               </div>
             </div>
             
             <div className="p-10 md:col-span-3">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">What's Inside?</h3>
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">¿Qué contiene?</h3>
               <ul className="space-y-3 mb-6">
                 <li className="flex items-start">
                   <div className="bg-primary-100 rounded-full p-1 mr-3 mt-0.5">
                     <span className="block h-2 w-2 rounded-full bg-primary-500"></span>
                   </div>
-                  <span className="text-gray-700">Step-by-step recycling guide for different materials</span>
+                  <span className="text-gray-700">Guía paso a paso para reciclar diferentes materiales</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-primary-100 rounded-full p-1 mr-3 mt-0.5">
                     <span className="block h-2 w-2 rounded-full bg-primary-500"></span>
                   </div>
-                  <span className="text-gray-700">Tips for reducing household waste</span>
+                  <span className="text-gray-700">Consejos para reducir el desperdicio doméstico</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-primary-100 rounded-full p-1 mr-3 mt-0.5">
                     <span className="block h-2 w-2 rounded-full bg-primary-500"></span>
                   </div>
-                  <span className="text-gray-700">Community success stories and case studies</span>
+                  <span className="text-gray-700">Historias de éxito de la comunidad y estudios de caso</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-primary-100 rounded-full p-1 mr-3 mt-0.5">
                     <span className="block h-2 w-2 rounded-full bg-primary-500"></span>
                   </div>
-                  <span className="text-gray-700">Collection point locations and operating hours</span>
+                  <span className="text-gray-700">Ubicaciones de puntos de recolección y horarios de operación</span>
                 </li>
                 <li className="flex items-start">
                   <div className="bg-primary-100 rounded-full p-1 mr-3 mt-0.5">
                     <span className="block h-2 w-2 rounded-full bg-primary-500"></span>
                   </div>
-                  <span className="text-gray-700">Calendar of upcoming events and workshops</span>
+                  <span className="text-gray-700">Calendario de eventos y talleres futuros</span>
                 </li>
               </ul>
               
               <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                 <div className="flex justify-between items-center">
                   <div>
-                    <h4 className="text-sm font-medium text-gray-500">DOWNLOADS</h4>
+                    <h4 className="text-sm font-medium text-gray-500">DESCARGAS</h4>
                     <p className="text-2xl font-bold text-primary-600">{downloadCount}</p>
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium text-gray-500">VIEWS</h4>
+                    <h4 className="text-sm font-medium text-gray-500">VISTAS</h4>
                     <p className="text-2xl font-bold text-secondary-600">{viewCount}</p>
                   </div>
                   <div>
-                    <h4 className="text-sm font-medium text-gray-500">FORMAT</h4>
+                    <h4 className="text-sm font-medium text-gray-500">FORMATO</h4>
                     <p className="text-lg font-semibold text-gray-700">PDF (2.4MB)</p>
                   </div>
                 </div>

@@ -55,7 +55,7 @@ const ObjectiveCard: React.FC<ObjectiveCardProps> = ({
           {trend && (
             <div className={`mt-2 inline-flex items-center text-sm ${trend.isPositive ? 'text-success-500' : 'text-error-500'}`}>
               <span>{trend.isPositive ? '↑' : '↓'} {Math.abs(trend.value)}%</span>
-              <span className="ml-1 text-gray-500">vs. last month</span>
+              <span className="ml-1 text-gray-500">vs. el mes pasado</span>
             </div>
           )}
         </div>

@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <Recycle className="h-8 w-8 text-primary-500" />
-              <span className="ml-2 text-lg font-semibold text-gray-900">EcoTrack</span>
+              <span className="ml-2 text-lg font-semibold text-gray-900">ReciPCL</span>
             </Link>
           </div>
           
@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
                     onClick={() => signOut()}
                     className="px-3 py-2 rounded-md text-sm font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition duration-300"
                   >
-                    Sign Out
+                    Cerrar Sesión
                   </button>
                 </>
               ) : (
@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-500 hover:bg-primary-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">Abrir menú principal</span>
               {isOpen ? (
                 <X className="block h-6 w-6" aria-hidden="true" />
               ) : (
@@ -136,7 +136,7 @@ const Navbar: React.FC = () => {
                   onClick={() => signOut()}
                   className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition duration-300"
                 >
-                  Sign Out
+                  Cerrar Sesión
                 </button>
               </>
             ) : (

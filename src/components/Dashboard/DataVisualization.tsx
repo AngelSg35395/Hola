@@ -4,7 +4,7 @@ import ChartContainer from './ChartContainer';
 const DataVisualization: React.FC = () => {
   // Data for waste collected by type over time
   const wasteByTypeData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
     datasets: [
       {
         label: 'PET',
@@ -14,14 +14,14 @@ const DataVisualization: React.FC = () => {
         borderWidth: 1,
       },
       {
-        label: 'Cardboard',
+        label: 'Carton',
         data: [45, 52, 49, 60, 55, 65],
         backgroundColor: 'rgba(39, 163, 210, 0.6)',
         borderColor: 'rgb(39, 163, 210)',
         borderWidth: 1,
       },
       {
-        label: 'Cans',
+        label: 'Latas',
         data: [28, 35, 39, 42, 40, 48],
         backgroundColor: 'rgba(246, 172, 57, 0.6)',
         borderColor: 'rgb(246, 172, 57)',
@@ -32,10 +32,10 @@ const DataVisualization: React.FC = () => {
 
   // Data for participation rates
   const participationData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
     datasets: [
       {
-        label: 'Participation Rate (%)',
+        label: 'Tasa de Participación (%)',
         data: [32, 39, 45, 53, 58, 65],
         backgroundColor: 'rgba(39, 163, 210, 0.2)',
         borderColor: 'rgb(39, 163, 210)',
@@ -48,17 +48,17 @@ const DataVisualization: React.FC = () => {
 
   // Data for campaign impact
   const campaignImpactData = {
-    labels: ['Awareness', 'Knowledge Gain', 'Behavior Change', 'Long-term Habits'],
+    labels: ['Concienciación', 'Ganancia de Conocimiento', 'Cambio de Comportamiento', 'Hábitos a Largo Plazo'],
     datasets: [
       {
-        label: 'Pre-Campaign',
+        label: 'Pre-Campaña',
         data: [25, 20, 15, 10],
         backgroundColor: 'rgba(156, 163, 175, 0.6)',
         borderColor: 'rgb(156, 163, 175)',
         borderWidth: 1,
       },
       {
-        label: 'Post-Campaign',
+        label: 'Post-Campaña',
         data: [65, 55, 45, 40],
         backgroundColor: 'rgba(58, 174, 95, 0.6)',
         borderColor: 'rgb(58, 174, 95)',
@@ -69,10 +69,10 @@ const DataVisualization: React.FC = () => {
 
   // Data for misclassification rate
   const misclassificationData = {
-    labels: ['PET', 'Cardboard', 'Cans', 'Glass', 'Other'],
+    labels: ['PET', 'Carton', 'Latas', 'Vidrio', 'Otro'],
     datasets: [
       {
-        label: 'Misclassification Rate (%)',
+        label: 'Tasa de Clasificación Incorrecta (%)',
         data: [12, 8, 15, 7, 22],
         backgroundColor: [
           'rgba(58, 174, 95, 0.6)',
@@ -95,10 +95,10 @@ const DataVisualization: React.FC = () => {
 
   // Data for daily costs
   const costData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
     datasets: [
       {
-        label: 'Daily Costs ($)',
+        label: 'Costos Operativos Diarios ($)',
         data: [320, 295, 310, 285, 275, 260],
         backgroundColor: 'rgba(239, 68, 68, 0.6)',
         borderColor: 'rgb(239, 68, 68)',
@@ -123,25 +123,25 @@ const DataVisualization: React.FC = () => {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Data Visualization</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Visualización de Datos</h2>
           <p className="text-gray-600 max-w-3xl mx-auto">
-            Track our progress with real-time data visualization. Toggle between different chart 
-            types to analyze waste collection, participation rates, and environmental impact metrics.
+            Rastrea nuestro progreso con visualizaciones de datos en tiempo real. Cambia entre diferentes tipos de gráficos 
+            para analizar la recolección de residuos, tasas de participación y métricas de impacto ambiental.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <ChartContainer
-            title="Waste Collected by Type"
-            description="Monthly totals in kilograms"
+            title="Residuos Recolectados por Tipo"
+            description="Totales mensuales en kilogramos"
             data={wasteByTypeData}
             options={chartOptions}
             availableTypes={['bar', 'line']}
           />
           
           <ChartContainer
-            title="Community Participation"
-            description="Percentage of community members participating"
+            title="Participación de la Comunidad"
+            description="Porcentaje de miembros de la comunidad participando"
             data={participationData}
             options={chartOptions}
             defaultType="line"
@@ -151,16 +151,16 @@ const DataVisualization: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <ChartContainer
-            title="Campaign Impact"
-            description="Comparing pre and post-campaign metrics"
+            title="Impacto de la Campaña"
+            description="Comparando métricas pre y post-campaña"
             data={campaignImpactData}
             options={chartOptions}
             availableTypes={['bar', 'line']}
           />
           
           <ChartContainer
-            title="Misclassification Rate"
-            description="Percentage of incorrectly sorted items by type"
+            title="Tasa de Clasificación Incorrecta"
+            description="Porcentaje de elementos clasificados incorrectamente por tipo"
             data={misclassificationData}
             options={chartOptions}
             defaultType="pie"
@@ -170,8 +170,8 @@ const DataVisualization: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ChartContainer
-            title="Daily Operational Costs"
-            description="Average daily costs in USD"
+            title="Costos Operativos Diarios"
+            description="Costos promedio diarios en USD"
             data={costData}
             options={chartOptions}
             defaultType="line"
@@ -179,12 +179,12 @@ const DataVisualization: React.FC = () => {
           />
           
           <div className="bg-white rounded-lg shadow-sm p-6 border border-gray-200 flex flex-col justify-center items-center">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">Need More Detailed Analysis?</h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">¿Necesitas un análisis más detallado?</h3>
             <p className="text-gray-600 text-center mb-6">
-              Access our complete dataset for custom analysis and reporting.
+              Accede a nuestro conjunto de datos completo para análisis y reportes personalizados.
             </p>
             <button className="bg-primary-500 text-white px-5 py-2 rounded-lg hover:bg-primary-600 transition-colors duration-300 shadow-sm">
-              Download Full Data (CSV)
+              Descargar Datos Completos (CSV)
             </button>
           </div>
         </div>

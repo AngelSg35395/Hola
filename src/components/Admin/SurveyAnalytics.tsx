@@ -10,10 +10,10 @@ const SurveyAnalytics: React.FC = () => {
   
   // Mock survey data
   const participationData = {
-    labels: ['Daily', 'Weekly', 'Monthly', 'Rarely', 'Never'],
+    labels: ['Diario', 'Semanal', 'Mensual', 'Ocasional', 'Nunca'],
     datasets: [
       {
-        label: 'Participation Frequency',
+        label: 'Frecuencia de Participación',
         data: [35, 42, 18, 4, 1],
         backgroundColor: [
           'rgba(58, 174, 95, 0.6)',
@@ -35,10 +35,10 @@ const SurveyAnalytics: React.FC = () => {
   };
   
   const satisfactionData = {
-    labels: ['1 (Poor)', '2', '3', '4', '5 (Excellent)'],
+    labels: ['1 (Malo)', '2', '3', '4', '5 (Excelente)'],
     datasets: [
       {
-        label: 'Satisfaction Level',
+        label: 'Nivel de Satisfacción',
         data: [5, 12, 28, 38, 17],
         backgroundColor: [
           'rgba(239, 68, 68, 0.6)',
@@ -63,7 +63,7 @@ const SurveyAnalytics: React.FC = () => {
     labels: ['18-24', '25-34', '35-44', '45-54', '55-64', '65+'],
     datasets: [
       {
-        label: 'Age Distribution',
+        label: 'Distribución de Edades',
         data: [12, 25, 22, 18, 15, 8],
         backgroundColor: 'rgba(39, 163, 210, 0.6)',
         borderColor: 'rgb(39, 163, 210)',
@@ -98,10 +98,10 @@ const SurveyAnalytics: React.FC = () => {
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
       <div className="flex flex-wrap justify-between items-center mb-6">
-        <h2 className="text-xl font-semibold text-gray-800">Survey Analytics</h2>
+        <h2 className="text-xl font-semibold text-gray-800">Análisis de Encuestas</h2>
         
         <div className="flex items-center">
-          <span className="text-sm text-gray-500 mr-3">Chart Type:</span>
+          <span className="text-sm text-gray-500 mr-3">Tipo de Gráfico:</span>
           <ChartToggle
             activeType={chartType}
             onChange={(type) => setChartType(type)}
@@ -111,47 +111,47 @@ const SurveyAnalytics: React.FC = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
         <div>
-          <h3 className="text-lg font-medium text-gray-700 mb-4">Participation Frequency</h3>
+          <h3 className="text-lg font-medium text-gray-700 mb-4">Frecuencia de Participación</h3>
           <div className="h-64">{renderChart(participationData, chartType)}</div>
         </div>
         
         <div>
-          <h3 className="text-lg font-medium text-gray-700 mb-4">Satisfaction Level</h3>
+          <h3 className="text-lg font-medium text-gray-700 mb-4">Nivel de Satisfacción</h3>
           <div className="h-64">{renderChart(satisfactionData, chartType)}</div>
         </div>
       </div>
       
       <div>
-        <h3 className="text-lg font-medium text-gray-700 mb-4">Demographics</h3>
+        <h3 className="text-lg font-medium text-gray-700 mb-4">Demografía</h3>
         <div className="h-64">{renderChart(demographicData, 'bar')}</div>
       </div>
       
       <div className="mt-8 border-t border-gray-200 pt-6">
-        <h3 className="text-lg font-medium text-gray-700 mb-4">Key Insights</h3>
+        <h3 className="text-lg font-medium text-gray-700 mb-4">Principales Observaciones</h3>
         <ul className="space-y-2 text-gray-600">
           <li className="flex items-start">
             <div className="bg-primary-100 rounded-full p-1 mr-3 mt-0.5">
               <span className="block h-2 w-2 rounded-full bg-primary-500"></span>
             </div>
-            <span>77% of respondents participate in recycling at least weekly</span>
+            <span>77% de los encuestados participan en el reciclaje al menos semanalmente</span>
           </li>
           <li className="flex items-start">
             <div className="bg-primary-100 rounded-full p-1 mr-3 mt-0.5">
               <span className="block h-2 w-2 rounded-full bg-primary-500"></span>
             </div>
-            <span>Satisfaction levels are generally high, with 55% rating the program 4 or 5</span>
+            <span>Los niveles de satisfacción son generalmente altos, con 55% calificando el programa como 4 o 5</span>
           </li>
           <li className="flex items-start">
             <div className="bg-primary-100 rounded-full p-1 mr-3 mt-0.5">
               <span className="block h-2 w-2 rounded-full bg-primary-500"></span>
             </div>
-            <span>The 25-34 age group has the highest participation rate</span>
+            <span>El grupo de edad de 25-34 tiene la tasa de participación más alta</span>
           </li>
           <li className="flex items-start">
             <div className="bg-primary-100 rounded-full p-1 mr-3 mt-0.5">
               <span className="block h-2 w-2 rounded-full bg-primary-500"></span>
             </div>
-            <span>Most common suggestion: More collection points needed in residential areas</span>
+            <span>La sugerencia más común: Se necesitan más puntos de recolección en las áreas residenciales</span>
           </li>
         </ul>
       </div>
@@ -161,7 +161,7 @@ const SurveyAnalytics: React.FC = () => {
           <svg className="h-5 w-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
           </svg>
-          Export Report (CSV)
+          Exportar Reporte (CSV)
         </button>
       </div>
     </div>

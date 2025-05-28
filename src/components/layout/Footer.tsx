@@ -9,11 +9,10 @@ const Footer: React.FC = () => {
           <div>
             <div className="flex items-center">
               <Recycle className="h-8 w-8 text-primary-400" />
-              <span className="ml-2 text-xl font-bold">EcoTrack</span>
+              <span className="ml-2 text-xl font-bold">ReciPCL</span>
             </div>
             <p className="mt-4 text-gray-300">
-              Empowering communities to track and reduce waste through 
-              data-driven insights and collaborative efforts.
+              Empoderar a las comunidades para rastrear y reducir el desperdicio a través de ideas basadas en datos y esfuerzos de colaboración.
             </p>
             <div className="mt-6">
               <a 
@@ -23,17 +22,17 @@ const Footer: React.FC = () => {
                 className="inline-flex items-center text-primary-400 hover:text-primary-300 transition duration-300"
               >
                 <MapPin className="h-5 w-5 mr-2" />
-                <span>Find Collection Points</span>
+                <span>Encuentra Puntos de Recolección</span>
               </a>
             </div>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-4">Contactanos</h3>
             <ul className="space-y-3">
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-primary-400" />
-                <span>info@ecotrack.example.com</span>
+                <span>info@ReciPCL.example.com</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-primary-400" />
@@ -41,25 +40,29 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <MapPin className="h-5 w-5 mr-2 text-primary-400" />
-                <span>123 Green Street, Eco City</span>
+                <span>
+                  Parque Rancho Banthi
+                  Calle Prol. Benito Juárez
+                  Banthi, 76804
+                  San Juan del Río, Qro.</span>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Operating Hours</h3>
+            <h3 className="text-lg font-semibold mb-4">Horarios de Operación</h3>
             <table className="w-full text-left">
               <tbody>
                 <tr>
-                  <td className="py-1 pr-4 text-gray-300">Monday - Friday</td>
+                  <td className="py-1 pr-4 text-gray-300">Lunes - Viernes</td>
                   <td className="py-1">8:00 AM - 6:00 PM</td>
                 </tr>
                 <tr>
-                  <td className="py-1 pr-4 text-gray-300">Saturday</td>
+                  <td className="py-1 pr-4 text-gray-300">Sábado</td>
                   <td className="py-1">9:00 AM - 5:00 PM</td>
                 </tr>
                 <tr>
-                  <td className="py-1 pr-4 text-gray-300">Sunday</td>
+                  <td className="py-1 pr-4 text-gray-300">Domingo</td>
                   <td className="py-1">10:00 AM - 2:00 PM</td>
                 </tr>
               </tbody>
@@ -68,7 +71,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} EcoTrack. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} ReciPCL. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

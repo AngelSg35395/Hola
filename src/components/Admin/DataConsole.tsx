@@ -191,37 +191,37 @@ const DataConsole: React.FC = () => {
     <thead className="bg-gray-50">
       <tr>
         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-          Date
+          Fecha
         </th>
         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
           PET (kg)
         </th>
         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-          Cardboard (kg)
+          Cartón (kg)
         </th>
         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-          Cans (kg)
+          Latas (kg)
         </th>
         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-          Glass (kg)
+          Vidrio (kg)
         </th>
         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-          Other (kg)
+          Otros (kg)
         </th>
         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-          Participation (%)
+          Participación (%)
         </th>
         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-          Misclass. (%)
+          Clasificación Incorrecta (%)
         </th>
         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-          Reach
+          Alcance
         </th>
         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-          Costs ($)
+          Costos ($)
         </th>
         <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-          Actions
+          Acciones
         </th>
       </tr>
     </thead>
@@ -435,7 +435,7 @@ const DataConsole: React.FC = () => {
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
       <div className="flex flex-wrap justify-between items-center mb-6">
-        <h2 className="text-xl font-semibold text-gray-800">Data Management Console</h2>
+        <h2 className="text-xl font-semibold text-gray-800">Consola de Gestión de Datos</h2>
         
         <div className="flex space-x-3">
           <button
@@ -443,20 +443,20 @@ const DataConsole: React.FC = () => {
             className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
           >
             <FileDown className="h-4 w-4 mr-2" />
-            Export CSV
+            Exportar CSV
           </button>
           <button
             className="flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
           >
             <FileUp className="h-4 w-4 mr-2" />
-            Import Data
+            Importar Datos
           </button>
           <button
             onClick={handleAddNewClick}
             className="flex items-center px-4 py-2 text-sm font-medium text-white bg-primary-500 rounded-md hover:bg-primary-600"
           >
             <PlusCircle className="h-4 w-4 mr-2" />
-            Add New Entry
+            Añadir Nueva Entrada
           </button>
         </div>
       </div>
@@ -468,7 +468,7 @@ const DataConsole: React.FC = () => {
               <circle className="opacity-25\" cx="12\" cy="12\" r="10\" stroke="currentColor\" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            <p className="mt-2 text-gray-500">Loading data...</p>
+            <p className="mt-2 text-gray-500">Cargando datos...</p>
           </div>
         ) : (
           <table className="min-w-full divide-y divide-gray-200">

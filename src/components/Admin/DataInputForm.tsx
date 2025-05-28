@@ -82,12 +82,12 @@ const DataInputForm: React.FC = () => {
 
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-      <h2 className="text-xl font-semibold text-gray-800 mb-6">Daily Waste Data Input</h2>
+      <h2 className="text-xl font-semibold text-gray-800 mb-6">Datos de Residuos Diarios</h2>
       
       {submitSuccess && (
         <div className="mb-6 bg-success-500 bg-opacity-10 border border-success-500 text-success-500 px-4 py-3 rounded-lg flex items-center animate-fade-in">
           <CheckCircle className="h-5 w-5 mr-2" />
-          <span>Data successfully submitted!</span>
+          <span>Datos enviados correctamente!</span>
         </div>
       )}
       
@@ -102,7 +102,7 @@ const DataInputForm: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
           <div>
             <label className="block text-gray-700 font-medium mb-2" htmlFor="date">
-              Date
+              Fecha
             </label>
             <input
               id="date"
@@ -119,7 +119,7 @@ const DataInputForm: React.FC = () => {
           
           <div>
             <label className="block text-gray-700 font-medium mb-2" htmlFor="costs">
-              Daily Costs ($)
+              Costos Diarios ($)
             </label>
             <input
               id="costs"
@@ -141,7 +141,7 @@ const DataInputForm: React.FC = () => {
         </div>
         
         <div className="mb-6">
-          <h3 className="text-lg font-medium text-gray-800 mb-3">Waste Amounts (kg)</h3>
+          <h3 className="text-lg font-medium text-gray-800 mb-3">Cantidad de Residuos (kg)</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             <div>
               <label className="block text-gray-700 font-medium mb-2" htmlFor="petAmount">
@@ -167,7 +167,7 @@ const DataInputForm: React.FC = () => {
             
             <div>
               <label className="block text-gray-700 font-medium mb-2" htmlFor="cardboardAmount">
-                Cardboard
+                Cartón
               </label>
               <input
                 id="cardboardAmount"
@@ -189,7 +189,7 @@ const DataInputForm: React.FC = () => {
             
             <div>
               <label className="block text-gray-700 font-medium mb-2" htmlFor="cansAmount">
-                Cans
+                Latas
               </label>
               <input
                 id="cansAmount"
@@ -211,7 +211,7 @@ const DataInputForm: React.FC = () => {
             
             <div>
               <label className="block text-gray-700 font-medium mb-2" htmlFor="glassAmount">
-                Glass
+                Vidrio
               </label>
               <input
                 id="glassAmount"
@@ -233,7 +233,7 @@ const DataInputForm: React.FC = () => {
             
             <div>
               <label className="block text-gray-700 font-medium mb-2" htmlFor="otherAmount">
-                Other
+                Otros
               </label>
               <input
                 id="otherAmount"
@@ -258,7 +258,7 @@ const DataInputForm: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           <div>
             <label className="block text-gray-700 font-medium mb-2" htmlFor="participationRate">
-              Participation Rate (%)
+              Tasa de Participación (%)
             </label>
             <input
               id="participationRate"
@@ -282,7 +282,7 @@ const DataInputForm: React.FC = () => {
           
           <div>
             <label className="block text-gray-700 font-medium mb-2" htmlFor="misclassificationRate">
-              Misclassification Rate (%)
+              Tasa de Clasificación Incorrecta (%)
             </label>
             <input
               id="misclassificationRate"
@@ -306,7 +306,7 @@ const DataInputForm: React.FC = () => {
           
           <div>
             <label className="block text-gray-700 font-medium mb-2" htmlFor="campaignReach">
-              Campaign Reach (people)
+              Alcance de la Campaña (personas)
             </label>
             <input
               id="campaignReach"
@@ -328,13 +328,13 @@ const DataInputForm: React.FC = () => {
         
         <div className="mb-8">
           <label className="block text-gray-700 font-medium mb-2" htmlFor="notes">
-            Notes
+            Notas
           </label>
           <textarea
             id="notes"
             rows={3}
             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
-            placeholder="Any additional information or observations..."
+            placeholder="Cualquier información adicional o observaciones..."
             {...register('notes')}
           ></textarea>
         </div>
@@ -345,7 +345,7 @@ const DataInputForm: React.FC = () => {
             onClick={() => reset()}
             className="mr-4 px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors duration-300"
           >
-            Reset
+            Reiniciar
           </button>
           <button
             type="submit"
@@ -354,7 +354,7 @@ const DataInputForm: React.FC = () => {
               isSubmitting ? 'opacity-75 cursor-not-allowed' : ''
             }`}
           >
-            {isSubmitting ? 'Submitting...' : 'Submit Data'}
+            {isSubmitting ? 'Enviando...' : 'Enviar Datos'}
           </button>
         </div>
       </form>

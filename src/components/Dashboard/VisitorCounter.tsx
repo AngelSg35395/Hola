@@ -48,12 +48,12 @@ const VisitorCounter: React.FC = () => {
         
         <div className="bg-white rounded-lg shadow-lg p-3 flex items-center border border-gray-200">
           <div>
-            <p className="text-xs text-gray-500 font-medium">ACTIVE VISITORS</p>
+            <p className="text-xs text-gray-500 font-medium">VISITANTES ACTIVOS</p>
             <p className="text-2xl font-bold text-primary-600">{visitorCount}</p>
           </div>
           <div className="ml-3 flex flex-col items-center">
             <span className="inline-block h-2 w-2 rounded-full bg-success-500 animate-pulse-slow"></span>
-            <span className="text-xs text-gray-500 mt-1">LIVE</span>
+            <span className="text-xs text-gray-500 mt-1">EN VIVO</span>
           </div>
         </div>
       </div>

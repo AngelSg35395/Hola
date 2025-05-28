@@ -43,8 +43,8 @@ const LoginForm: React.FC = () => {
           <div className="bg-primary-100 h-16 w-16 rounded-full flex items-center justify-center mx-auto mb-4">
             <Lock className="h-8 w-8 text-primary-600" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-800">Admin Login</h2>
-          <p className="text-gray-600 mt-2">Sign in to access the admin dashboard</p>
+          <h2 className="text-2xl font-bold text-gray-800">Inicio de Sesión</h2>
+          <p className="text-gray-600 mt-2">Inicia sesión para acceder al panel de administración</p>
         </div>
         
         {loginError && (
@@ -57,7 +57,7 @@ const LoginForm: React.FC = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-6">
             <label className="block text-gray-700 font-medium mb-2" htmlFor="email">
-              Email
+              Correo Electrónico
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -86,7 +86,7 @@ const LoginForm: React.FC = () => {
           
           <div className="mb-8">
             <label className="block text-gray-700 font-medium mb-2" htmlFor="password">
-              Password
+              Contraseña
             </label>
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -120,17 +120,17 @@ const LoginForm: React.FC = () => {
                   <circle className="opacity-25\" cx="12\" cy="12\" r="10\" stroke="currentColor\" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                Signing in...
+                Iniciando sesión...
               </>
             ) : (
-              'Sign In'
+              'Iniciar Sesión'
             )}
           </button>
         </form>
         
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
-            For demo purposes, use: <span className="font-medium">admin@example.com</span> / <span className="font-medium">password</span>
+            Para fines de demostración, use: <span className="font-medium">admin@example.com</span> / <span className="font-medium">password</span>
           </p>
         </div>
       </div>
