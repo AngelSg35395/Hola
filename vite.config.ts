@@ -19,7 +19,14 @@ export default defineConfig({
       output: {
         manualChunks: {
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['@radix-ui/react-*', 'lucide-react'],
+          'ui-vendor': [
+            '@radix-ui/react-label',
+            '@radix-ui/react-radio-group',
+            '@radix-ui/react-select',
+            '@radix-ui/react-slot',
+            '@radix-ui/react-tabs',
+            'lucide-react'
+          ],
         },
       },
     },
