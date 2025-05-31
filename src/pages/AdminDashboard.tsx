@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Navigate } from 'react-router-dom';
 import Layout from '@/components/Layout/Layout';
 import DataInputForm from '@/components/Admin/DataInputForm';
