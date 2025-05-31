@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Pie, Bar } from 'react-chartjs-2';
+import { Pie, Bar, Line } from 'react-chartjs-2';
 import ChartToggle from '../Dashboard/ChartToggle';
 import { supabase } from '../../lib/supabase';
 
@@ -90,6 +90,8 @@ const SurveyAnalytics: React.FC = () => {
         return <Bar data={data} options={chartOptions} />;
       case 'pie':
         return <Pie data={data} options={chartOptions} />;
+      case 'line':
+        return <Line data={data} options={chartOptions} />;
       default:
         return <Bar data={data} options={chartOptions} />;
     }
