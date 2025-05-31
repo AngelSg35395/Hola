@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
-import Layout from '../components/Layout/Layout';
-import DataInputForm from '../components/Admin/DataInputForm';
-import SurveyAnalytics from '../components/Admin/SurveyAnalytics';
-import DataConsole from '../components/Admin/DataConsole';
-import { useAuth } from '../context/AuthContext';
+import Layout from '@/components/Layout/Layout';
+import DataInputForm from '@/components/Admin/DataInputForm';
+import SurveyAnalytics from '@/components/Admin/SurveyAnalytics';
+import DataConsole from '@/components/Admin/DataConsole';
+import { useAuth } from '@/context/AuthContext';
 
 const AdminDashboard: React.FC = () => {
   const { user, loading } = useAuth();
