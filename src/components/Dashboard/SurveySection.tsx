@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { ClipboardList, CheckCircle, XCircle } from 'lucide-react';
+import { ClipboardList, CheckCircle, XCircle, BookOpen } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
+import { useNavigate } from 'react-router-dom';
 
 interface SurveyFormData {
   name: string;
@@ -13,23 +14,53 @@ interface SurveyFormData {
 }
 
 const SurveySection: React.FC = () => {
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const { register, handleSubmit, reset, watch, formState: { errors, isSubmitSuccessful } } = useForm<SurveyFormData>();
   
   const onSubmit = async (data: SurveyFormData) => {
     try {
-      // In a real implementation, this would submit to Supabase
-      // const { error } = await supabase.from('survey_responses').insert([data]);
-      
-      // if (error) throw error;
-      
-      // Simulate successful submission
-      console.log('Survey submitted:', data);
-      
+      setIsLoading(true);
+      setError(null);
+
+      const { error: insertError } = await supabase
+        .from('survey_responses')
+        .insert([{
+          name: data.name,
+          email: data.email,
+          participation_level: data.participationLevel,
+          satisfaction_level: data.satisfactionLevel,
+          suggestions: data.suggestions,
+          is_subscribed: data.isSubscribed,
+          created_at: new Date().toISOString()
+        }]);
+
+      if (insertError) throw insertError;
+
+      // Si el usuario se suscribió, agregarlo a la lista de suscriptores
+      if (data.isSubscribed) {
+        const { error: subscriberError } = await supabase
+          .from('subscribers')
+          .insert([{
+            email: data.email,
+            name: data.name,
+            created_at: new Date().toISOString()
+          }]);
+
+        if (subscriberError) {
+          console.error('Error al agregar suscriptor:', subscriberError);
+        }
+      }
+
       // Reset form after successful submission
       setTimeout(() => reset(), 3000);
       
     } catch (error) {
       console.error('Error submitting survey:', error);
+      setError('Hubo un error al enviar el formulario. Por favor, intenta de nuevo.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -40,10 +71,17 @@ const SurveySection: React.FC = () => {
           <div className="text-center mb-10">
             <ClipboardList className="h-12 w-12 text-primary-500 mx-auto mb-4" />
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Feedback de la Comunidad</h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 mb-6">
               Tu feedback nos ayuda a mejorar nuestras iniciativas de gestión de residuos. 
               Por favor, toma un momento para completar este breve cuestionario.
             </p>
+            <button
+              onClick={() => navigate('/encuesta-conocimientos')}
+              className="inline-flex items-center px-4 py-2 bg-secondary-500 text-white rounded-lg hover:bg-secondary-600 transition-colors duration-300"
+            >
+              <BookOpen className="h-5 w-5 mr-2" />
+              Realizar Prueba de Conocimientos
+            </button>
           </div>
           
           {isSubmitSuccessful ? (
@@ -59,6 +97,15 @@ const SurveySection: React.FC = () => {
               onSubmit={handleSubmit(onSubmit)} 
               className="bg-gray-50 p-8 rounded-lg shadow-sm border border-gray-200"
             >
+              {error && (
+                <div className="mb-6 p-4 bg-error-500 bg-opacity-10 border border-error-500 rounded-lg">
+                  <p className="text-error-500 text-sm flex items-center">
+                    <XCircle className="h-4 w-4 mr-2" />
+                    {error}
+                  </p>
+                </div>
+              )}
+
               <div className="mb-6">
                 <label className="block text-gray-700 font-medium mb-2" htmlFor="name">
                   Nombre
@@ -146,7 +193,7 @@ const SurveySection: React.FC = () => {
                       />
                       <span 
                         className={`h-10 w-10 rounded-full flex items-center justify-center text-lg font-medium cursor-pointer transition-colors ${
-                          value === parseInt(watch('satisfactionLevel'))
+                          value === Number(watch('satisfactionLevel'))
                             ? 'bg-primary-500 text-white'
                             : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                         }`}
@@ -194,9 +241,12 @@ const SurveySection: React.FC = () => {
               
               <button
                 type="submit"
-                className="w-full bg-primary-500 text-white py-3 px-4 rounded-lg hover:bg-primary-600 transition-colors duration-300 font-medium"
+                disabled={isLoading}
+                className={`w-full bg-primary-500 text-white py-3 px-4 rounded-lg transition-colors duration-300 font-medium ${
+                  isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-primary-600'
+                }`}
               >
-                Enviar Feedback
+                {isLoading ? 'Enviando...' : 'Enviar Feedback'}
               </button>
             </form>
           )}

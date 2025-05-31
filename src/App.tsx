@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import MainDashboard from './pages/MainDashboard';
 import AdminDashboard from './pages/AdminDashboard';
 import LoginPage from './pages/LoginPage';
+import KnowledgeTest from './pages/KnowledgeTest';
 
 const App: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const App: React.FC = () => {
           <Route path="/" element={<MainDashboard />} />
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/encuesta-conocimientos" element={<KnowledgeTest />} />
         </Routes>
       </Router>
     </AuthProvider>
